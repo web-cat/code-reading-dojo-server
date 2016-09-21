@@ -1,5 +1,5 @@
 set :application, 'code-reading-dojo'
-set :repo_url, 'git://github.com/web-cat/code-reading-dojo.git'
+set :repo_url, 'git://github.com/web-cat/code-reading-dojo-server.git'
 
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
 
