@@ -68,4 +68,5 @@ Dir['/Users/zahra/Documents/workspace/Final/3/*'].each do |fname|
   l += 1
 end
 
-user = User.create(username:"zahra", levelcompleted:"1")
+# user = User.create(username:"zahra", levelcompleted:"1")
+user = User.create(email:'test@test.com',password:'password')
