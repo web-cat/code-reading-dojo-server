@@ -5,7 +5,6 @@ source 'https://rubygems.org'
 gem 'rails', '~> 5.0.0'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', platforms: :ruby
-gem 'activerecord-jdbcsqlite3-adapter', :git => "https://github.com/jruby/activerecord-jdbc-adapter.git", :branch => "rails-5"
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -24,6 +23,11 @@ gem 'puma', '~> 3.0'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: :mri
+  gem 'activerecord-jdbcsqlite3-adapter', :git => "https://github.com/jruby/activerecord-jdbc-adapter.git", :branch => "rails-5"
+end
+
+group :production do
+  gem 'activerecord-jdbcmysql-adapter'
 end
 
 group :development do
