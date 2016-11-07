@@ -24,6 +24,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: :mri
   gem 'activerecord-jdbcsqlite3-adapter', :git => "https://github.com/jruby/activerecord-jdbc-adapter.git", :branch => "rails-5"
+  gem 'jdbc-sqlite3'
 end
 
 group :production do

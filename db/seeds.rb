@@ -8,7 +8,7 @@
 t=""
 l=1
 error=""
-Dir['/Users/zahra/Documents/workspace/Final/1/*'].each do |fname|
+Dir['/Users/zahra/Documents/workspace/Final/0/*'].each do |fname|
   s = ""
   File.open(fname, "r") do |f|
     lineNum=1

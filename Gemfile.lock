@@ -216,6 +216,7 @@ DEPENDENCIES
   capistrano-rails
   capistrano3-puma!
   devise_token_auth
+  jdbc-sqlite3
   listen (~> 3.0.5)
   omniauth
   puma (~> 3.0)
@@ -225,3 +226,6 @@ DEPENDENCIES
   spring-watcher-listen (~> 2.0.0)
   sqlite3
   tzinfo-data
+
+BUNDLED WITH
+   1.13.5
