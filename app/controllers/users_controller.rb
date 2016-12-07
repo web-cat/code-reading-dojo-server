@@ -19,9 +19,21 @@ class UsersController < ApplicationController
     user.email = params[:data][:attributes][:email]
     user.password = params[:data][:attributes][:password]
     user.password_confirmation = params[:data][:attributes]['password-confirmation']
-    user.save!
-    return head :ok
+    user.levelcompleted = '0'
+    if user.save
+      render json: {"email":"testing@test.com","levelcompleted":null}, status: :created, location: user
+    else
+      render json: user.errors, status: :unprocessable_entity
+    end
   end
+  # def create
+  #   user = User.new
+  #   user.email = params[:data][:attributes][:email]
+  #   user.password = params[:data][:attributes][:password]
+  #   user.password_confirmation = params[:data][:attributes]['password-confirmation']
+  #   user.save!
+  #   return head :ok
+  # end
   # def create
   #   @user = User.new(user_params)
   #
@@ -56,10 +68,7 @@ class UsersController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def user_params
-      p '##############'
-
-
-      params.require(:user).permit(:email, :password, :password_confirmation)
+      params.require(:user).permit(:email, :password, :password_confirmation, :levelcompleted)
       # params.require(:user).permit(:email, :password, :password_confirmation, :levelcompleted)
     end
 end
