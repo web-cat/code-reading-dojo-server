@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :surveys
   # mount_devise_token_auth_for 'User', at: 'users'
   mount_devise_token_auth_for 'User', at: 'users', :controllers => { registrations: 'registrations' }
   resources :users

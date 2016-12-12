@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161109073341) do
+ActiveRecord::Schema.define(version: 20161212012715) do
 
   create_table "programs", force: :cascade do |t|
     t.string   "code"
@@ -19,6 +19,16 @@ ActiveRecord::Schema.define(version: 20161109073341) do
     t.string   "errorindexes"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+  end
+
+  create_table "surveys", force: :cascade do |t|
+    t.string   "email"
+    t.string   "s1"
+    t.string   "s2"
+    t.string   "s3"
+    t.string   "s4"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 # Could not dump table "users" because of following NameError
