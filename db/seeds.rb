@@ -72,4 +72,6 @@ end
 # user = User.create(username:"zahra", levelcompleted:"1")
 user = User.create(email:'test@test.com', password:'password')
 # user = User.create(email:'ghaed@vt.edu', password:'test123')pub1 = PublishingHouse.create(name: "ABC Publisher", discount: 40)
-survey1 = Survey.create(email: "ghaed@vt.edu", s1:"1", s2:"2", s3:"3", s4:"4")
+survey1 = Survey.create(email: 'test@test.com', s1:'1', s2:'2', s3:'3', s4:'4')
+
+tap1 = Tap.create(email: 'test@test.com', word:'public', success:'no', time:'30', level:'3')
