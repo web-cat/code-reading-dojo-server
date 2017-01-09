@@ -75,3 +75,5 @@ user = User.create(email:'test@test.com', password:'password')
 survey1 = Survey.create(email: 'test@test.com', s1:'1', s2:'2', s3:'3', s4:'4')
 
 tap1 = Tap.create(email: 'test@test.com', word:'public', success:'no', time:'30', level:'3')
+
+info1 = Info.create(email: 'test@test.com', gender:'female', age:'24', experience:'2+', enjoy:'3', language:'Java')
