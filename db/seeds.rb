@@ -8,7 +8,7 @@
 t=""
 l=1
 error=""
-Dir['/Users/zahra/Documents/workspace/Game-Regex/src/test/output/first/*'].each do |fname|
+Dir['/Users/zahra/Documents/workspace/CheckStyle/out/final/*'].each do |fname|
   s = ""
   error = ""
   File.open(fname, "r") do |f|
@@ -23,7 +23,17 @@ Dir['/Users/zahra/Documents/workspace/Game-Regex/src/test/output/first/*'].each 
       lineNum+=1
     end
   end
-  Program.create(code: s, difficulty:"beginner", level:l.to_s, errorindexes:error)
+  farray = fname.split("/")
+  lev = farray[farray.length-1]
+  strlevel = lev[0..(lev.length-6)]
+  finallevel = Integer(strlevel)
+  if (finallevel < 7) and (finallevel > 0)
+    Program.create(code: s, difficulty:"beginner", level:strlevel, errorindexes:error)
+  elsif (finallevel>6) and (finallevel<13)
+    Program.create(code: s, difficulty:"intermediate", level:strlevel, errorindexes:error)
+  else
+    Program.create(code: s, difficulty:"advanced", level:strlevel, errorindexes:error)
+  end
   l += 1
 end
 
