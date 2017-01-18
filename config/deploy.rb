@@ -40,12 +40,8 @@ namespace :deploy do
   # Patch for missing assets manifest
   task :fix_absent_manifest_bug do
     on roles(:web) do
-      within release_path do  execute :mkdir,
-        release_path.join('public', fetch(:assets_prefix))
-      end
-
       within release_path do  execute :touch,
-        release_path.join('public', fetch(:assets_prefix), 'manifest-fix.temp')
+        release_path.join('public', fetch(:assets_prefix), 'manifest.tmp')
       end
     end
   end
