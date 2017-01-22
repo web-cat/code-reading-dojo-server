@@ -19,9 +19,9 @@ class UsersController < ApplicationController
     user.email = params[:data][:attributes][:email]
     user.password = params[:data][:attributes][:password]
     user.password_confirmation = params[:data][:attributes]['password-confirmation']
-    user.levelcompleted = '0'
+    user.levelcompleted = '1'
     if user.save
-      render json: {"email":"testing@test.com","levelcompleted":null}, status: :created, location: user
+      render json: {"email":"testing@test.com","levelcompleted":"1"}, status: :created, location: user
     else
       render json: user.errors, status: :unprocessable_entity
     end
