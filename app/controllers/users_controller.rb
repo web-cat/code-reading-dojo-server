@@ -20,8 +20,9 @@ class UsersController < ApplicationController
     user.password = params[:data][:attributes][:password]
     user.password_confirmation = params[:data][:attributes]['password-confirmation']
     user.levelcompleted = '1'
+    user.consent = '1'
     if user.save
-      render json: {"email":"testing@test.com","levelcompleted":"1"}, status: :created, location: user
+      render json: {"email":"testing@test.com","levelcompleted":"1", "consent":"1"}, status: :created, location: user
     else
       render json: user.errors, status: :unprocessable_entity
     end
@@ -47,6 +48,7 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1
   def update
     @user.levelcompleted = params[:data][:attributes][:levelcompleted]
+    @user.consent = params[:data][:attributes][:consent]
     if @user.save
       render json: @user
     else
@@ -69,7 +71,7 @@ class UsersController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def user_params
-      params.require(:user).permit(:email, :password, :password_confirmation, :levelcompleted)
+      params.require(:user).permit(:email, :password, :password_confirmation, :levelcompleted, :consent)
       # params.require(:user).permit(:email, :password, :password_confirmation, :levelcompleted)
     end
 end

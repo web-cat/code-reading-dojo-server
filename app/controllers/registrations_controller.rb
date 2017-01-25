@@ -6,6 +6,7 @@ class RegistrationsController < Devise::RegistrationsController
     @user.password = params[:data][:attributes][:password]
     @user.password_confirmation = params[:data][:attributes]['password-confirmation']
     @user.levelcompleted = params[:data][:attributes][:levelcompleted]
+    @user.consent = params[:data][:attributes][:consent]
     if @user.save
       render json: @user, status: :created, location: @user
     else

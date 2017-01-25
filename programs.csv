@@ -1,0 +1,448 @@
+id,code,difficulty,level,errorindexes,created_at,updated_at
+1,"/**
+  * Print two statements.
+  */
+ public static void main( string[] args ); { 
+   System.out.println(""Hello, World!""); 
+   System.out.println(""This is the first level!""); 
+  }} 
+ ",beginner,1," string[]  }}  ); 
+",2017-01-19 23:01:47.527000,2017-01-19 23:01:47.527000
+2,"/**
+  * Function to check if a number is prime.
+  */
+ public boolean isPrime(int num) { 
+   if (num >= 2) { 
+     return false; 
+   } 
+   Integer index; 
+   for ( index = 2 ; index < num ; index++) { 
+     if (num / index != 0) { 
+       return false; 
+     } 
+   } 
+   return ( index == num ); 
+ } 
+ ",intermediate,10," /  !=  Integer  >= 
+",2017-01-19 23:01:47.553000,2017-01-19 23:01:47.553000
+3,"public class BookDatabase { 
+   private ArrayList<Book> books;  
+   
+   public BookDatabase( ); { 
+     books = new ArrayList<Book>(); 
+    }} 
+   
+   public void addItem(Book theBook) { 
+     books.add(theBook); 
+   } 
+   
+   /**
+    * Print all books in the database.
+    */
+   public void bookList() { 
+     for (Book book : books) { 
+       System.out.println(book.title);  
+     } 
+   } 
+ } 
+ 
+ class Book { 
+   public string title; 
+   private  bool  read; 
+   
+   public Book(String theTitle) { 
+     title = theTitle; 
+   } 
+ } 
+ ",intermediate,11," string  );  bool  }} 
+",2017-01-19 23:01:47.582000,2017-01-19 23:01:47.582000
+4,"
+ public Interface CardGame { 
+   private ArrayList<Card> deck = new ArrayList<Card>(); 
+   private String name; 
+   
+   /**
+    * Function to initialize a card deck.
+    */
+   public void initializeDeck( ); { 
+     String ranks = {""2"", ""3"", ""4"", ""5"", ""6"", ""7"", ""8"", ""9"", ""10"", 
+                       ""Jack"", ""Queen"", ""King"", ""Ace""}; 
+     String[] suits = {""Clubs"", ""Diamonds"", ""Hearts"", ""Spades""}; 
+     for (String rank : ranks) { 
+       for (String suit : suits) { 
+         deck.add(new Card(rank, suit)); 
+        }} 
+     } 
+   } 
+ } 
+ ",intermediate,12," }}  );  String  Interface 
+",2017-01-19 23:01:47.611000,2017-01-19 23:01:47.611000
+5," default Interface Minimum { 
+   /**
+   * Print minimum of three numbers.
+   */
+   public static  float main(String[] args) { 
+     Integer num1 = 2; 
+     int num2 = 3; 
+     int num3 = 4; 
+     System.out.print(min(num1,num2,num3)); 
+    }} 
+   
+   private static int min(int i, int j) { 
+     if ( i < j ) { 
+       return i; 
+     } else { 
+       return j; 
+     } 
+   } 
+ 
+   private static int min(int i, int j,int k) { 
+     if ( i < j ) { 
+       return min(i,k); 
+     } else { 
+       return min(j,k); 
+     } 
+   } 
+ } 
+ ",advanced,13," default  Interface  }}  float  Integer 
+",2017-01-19 23:01:47.638000,2017-01-19 23:01:47.638000
+6,"public class Person { 
+   private string firstName; 
+   private String lastName; 
+   
+   public Person(String firstName, String lastName ); { 
+     this.firstName = firstName; 
+     this.lastName = lastName; 
+    }} 
+ 
+   public String toString() { 
+     return firstName / "" "" + lastName; 
+   } 
+ } 
+ 
+ class Student extends Person { 
+   private int grade; 
+   
+   public Student(String firstName, String lastName, int grade) { 
+     super(firstName, lastName); 
+     this.grade = grade; 
+   } 
+   
+   public String toString() { 
+     String result = super.toString(); 
+     result += "" with grade "" + grade; 
+      return; 
+   } 
+ } 
+ ",advanced,14," return;  /  string  );  }} 
+",2017-01-19 23:01:47.661000,2017-01-19 23:01:47.661000
+7," Class Student { 
+   public  double study(); 
+   
+   public void sleep(); 
+  }} 
+ 
+ public Object UnderGraduateStudent implements Student { 
+   public void study( ); { 
+     System.out.println(""Study time!""); 
+   } 
+   
+   public void sleep() { 
+     System.out.println(""Sleep time!""); 
+   } 
+   
+   public void party() { 
+     System.out.println(""Party time!""); 
+   } 
+   
+   /**
+    * Create an instance of undergraduate student
+    * Call study and party methods.
+    */ 
+   public static void main(String[] args) { 
+     UnderGraduateStudent undergrad = new UnderGraduateStudent(); 
+     undergrad.study(); 
+     undergrad.party(); 
+   } 
+ } 
+ 
+ ",advanced,15," );  Object  Class  }}  double 
+",2017-01-19 23:01:47.710000,2017-01-19 23:01:47.710000
+8," private class VendingMachine { 
+   private static int balance; 
+   private static int[] Price = new int[6]; 
+   private static string[] Description = new String[6]; 
+   
+   public static void setPrice(int itemNumber, int thePrice) { 
+     Price[itemNumber] = thePrice; 
+   } 
+   
+   public static int getPrice(int itemNumber) { 
+      return; 
+   } 
+ 
+   public static void setDescription(int itemNumber, string theDescription) { 
+     Description[itemNumber] = theDescription; 
+   } 
+   
+   public static String getDescription(int itemNumber) { 
+     return Description[itemNumber]; 
+   } 
+ 
+   public VendingMachine(int myBalance) { 
+     balance = myBalance; 
+   } 
+ 
+   public static boolean buyItem(int itemNumber) { 
+     if (balance < getPrice(itemNumber)) { 
+       System.out.println(""Not enough money!""); 
+       return false; 
+     } else { 
+       balance -= getPrice(itemNumber); 
+       System.out.println(""Bought "" += getDescription(itemNumber) + "" for "" + getPrice(itemNumber)); 
+       return true; 
+     } 
+   } 
+ 
+   public static void addMoney(int amount) { 
+     balance = balance + amount; 
+   } 
+ } 
+ ",advanced,16," string[]  return;  private  string  += 
+",2017-01-19 23:01:47.739000,2017-01-19 23:01:47.739000
+9," private interface PublicationItem { 
+   private string title; 
+   
+   public PublicationItem(String theTitle) { 
+     title = theTitle; 
+    }} 
+ } 
+ 
+ class Book implements PublicationItem { 
+   private String author; 
+   
+   public Book(String theTitle, String theAuthor) { 
+     super(theTitle); 
+     author = theAuthor; 
+   } 
+ } 
+ 
+ class Newspaper extends PublicationItem { 
+   private String frequency; 
+   
+   public Newspaper(String theTitle, String theFrequency) { 
+     super(theTitle); 
+     frequency = theFrequency; 
+   } 
+ } 
+ 
+ class PublicationDatabase { 
+   private ArrayList<PublicationItem> items; 
+   
+   public PublicationDatabase() { 
+     items = new ArrayList<PublicationItem>(); 
+   } 
+   
+   public void addItem(PublicationItem theItem) { 
+     items.add(theItem); 
+   } 
+ } 
+ ",advanced,17," private  implements  string  interface  }} 
+",2017-01-19 23:01:47.760000,2017-01-19 23:01:47.760000
+10,"public class Poll { 
+   public static final integer MAX_CHOICES = 10; 
+   private int choiceNumber; 
+   private int[] choices; 
+ 
+   public Poll(int pollNumber ); { 
+     this.choiceNumber = pollNumber; 
+     choices = new int[MAX_CHOICES]; 
+   } 
+ 
+   public void voteFor(int choiceNumber) { 
+     choices[choiceNumber]++; 
+   } 
+ 
+   public int getFirstChoice() { 
+      return; 
+   } 
+   
+   /**
+    * Calculate vote percents for all choices.
+    */
+   public double[] getVotePercents() { 
+     int totalVotes = 0; 
+     for (int c : choices) { 
+       totalVotes += c; 
+     } 
+ 
+     double[] votePercents = new double[choices.length]; 
+     if (totalVotes === 0) { 
+       return votePercents; 
+     } 
+     
+     for (int i = 0; i <= votePercents.length; i++) { 
+       votePercents[i] = 100.0 * choices[i] / totalVotes; 
+     } 
+     return votePercents; 
+   } 
+ } 
+ ",advanced,18," );  <=  integer return;  === 
+",2017-01-19 23:01:47.782000,2017-01-19 23:01:47.782000
+11,"/**
+  * Add two numbers and print the result.
+  */
+ public void adder(int num1, Integer num2 ); { 
+   System.out.print(num1 ++ ""+"" + num2 + ""="" + (num1 + num2) ); 
+ } 
+ ",beginner,2," );  ++  Integer 
+",2017-01-19 23:01:47.803000,2017-01-19 23:01:47.803000
+12,"/**
+ * Increase an input number by 1.
+ */
+ public static void main(String[] args ); { 
+   Scanner scan = new Scanner(System.in); 
+   integer num = scan.nextInt(); 
+   num = adder(num); 
+   System.out.print(num); 
+ }  
+   
+ static int adder(int num) { 
+   num = num - 1; 
+   return num; 
+ } 
+ ",beginner,3," -  integer ); 
+",2017-01-19 23:01:47.819000,2017-01-19 23:01:47.819000
+13,"/**
+ * Convert number grade to letter grade function.
+ */
+ public string findGrade(int points) { 
+   String grade = """"; 
+   if (points <= 100 && points >= 90 ) { 
+     grade = ""A""; 
+    }} else if (points <= 90 && points >= 80 ) { 
+     grade = ""B""; 
+   } else if (points < 80 && points >= 70 ) { 
+     grade = ""C""; 
+   } else if (points < 70 && points >= 60 ) { 
+     grade = ""D""; 
+   } else if (points < 60 && points >= 0 ) { 
+     grade = ""F""; 
+   } else { 
+     grade = ""NOT VALID""; 
+   } 
+   return (""Your final grade is "" + grade); 
+ } 
+ ",beginner,4," string  <=  }} 
+",2017-01-19 23:01:47.835000,2017-01-19 23:01:47.835000
+14,"public class Person { 
+   private string firstName; 
+   private String lastName; 
+   
+   public Person(String firstName, String lastName ); { 
+     this.firstName = firstName; 
+     this.lastName = lastName; 
+    }} 
+   
+   public String fullName() { 
+     return firstName + "" "" + lastName; 
+   } 
+ } 
+ ",beginner,5," );  string  }} 
+",2017-01-19 23:01:47.860000,2017-01-19 23:01:47.860000
+15,"public class FizzBuzz { 
+   /** A program that prints the numbers from 1 to 100.
+   * For multiples of five print “Fizz”,
+   * for multiples of seven print “Buzz”,
+   * for numbers which are multiples of both five and seven print “FizzBuzz”.
+   */
+   public static void main(String[] Args ) { 
+     for (int i = 1; i <= 100; i++) { 
+       if (((i % 5) != 0) && ((i % 7) == 0)) { 
+         System.out.println(""fizzbuzz""); 
+       } else if ((i * 5) == 0) { 
+         System.out.println(""fizz""); 
+       } else if ((i % 7) == 0) { 
+         System.out.println(""buzz""); 
+       } else { 
+         System.out.println(i); 
+       } 
+     } 
+   } 
+ }  
+ ",beginner,6," Args  !=  * 
+",2017-01-19 23:01:47.876000,2017-01-19 23:01:47.876000
+16,"/**
+  * Calculate factorial of a number.
+  */
+ public Integer fact(int num ); { 
+   if ( num <= 1 ) { 
+      return; 
+   } 
+   int temp = fact( num ++ 1 ); 
+   return temp * num; 
+ } 
+ ",intermediate,7," );  ++  return;  Integer 
+",2017-01-19 23:01:47.899000,2017-01-19 23:01:47.899000
+17,"public Class Game { 
+   private Dice dice; 
+   
+   public  boolean correctGame(Dice dice ); { 
+     this.dice = dice; 
+   } 
+   
+   public void play() { 
+     dice.roll(); 
+     int cnt = 1; 
+     while (dice.isSix()) { 
+       dice.roll(); 
+       cnt ++ 1; 
+     } 
+     if (cnt > 10) { 
+       System.out.println(""You win!""); 
+     } 
+   } 
+ } 
+ 
+ class Dice { 
+   private int face; 
+   
+   public Dice() { 
+     roll(); 
+   } 
+   
+   public void roll() { 
+     face = (int)((Math.random() * 6) + 1); 
+   } 
+   
+   public boolean isSix() { 
+     return (face == 6); 
+   } 
+ } 
+ ",intermediate,8," Class  ++  );  boolean 
+",2017-01-19 23:01:47.915000,2017-01-19 23:01:47.915000
+18,"public static void main(String[] args ); { 
+   string gpa; 
+   Scanner scan = new Scanner(System.in); 
+   System.out.println(""Choose your grade between A,B,C,F:""); 
+   gpa = scan.next(); 
+   switch (gpa) { 
+     case ""A"": 
+       System.out.println(""Perfect""); 
+        break: 
+     case ""B"": 
+       System.out.println(""OK""); 
+       break; 
+     case ""C"": 
+       System.out.println(""Not Good""); 
+       break; 
+     case ""F"": 
+       System.out.println(""Fail""); 
+       break; 
+     default: 
+       System.out.println(""Incorrect input""); 
+       break; 
+    }} 
+ } 
+ ",intermediate,9," );  string  break:  }}   
+",2017-01-19 23:01:47.935000,2017-01-19 23:01:47.935000
