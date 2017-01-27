@@ -3,10 +3,18 @@ class UsersController < ApplicationController
 
   # GET /users
   def index
-    @users = User.all
-    p @users
-    render json: @users
+    if params[:role] == "admin"
+      @users = User.all
+      p @users
+      render json: @users
+    end
   end
+  # # GET /users
+  # def index
+  #   @users = User.all
+  #   p @users
+  #   render json: @users
+  # end
 
   # GET /users/1
   def show
