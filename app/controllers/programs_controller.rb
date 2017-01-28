@@ -3,9 +3,13 @@ class ProgramsController < ApplicationController
 
   # GET /programs
   def index
-    @programs = Program.all
+    if params[:role] == "admin"
+      @programs = Program.all
 
-    render json: @programs
+      render json: @programs
+    else
+      render :template => 'static_pages/home'
+    end
   end
 
   # GET /programs/1
