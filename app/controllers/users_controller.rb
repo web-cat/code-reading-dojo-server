@@ -3,7 +3,8 @@ class UsersController < ApplicationController
 
   # GET /users
   def index
-    if params[:role] == "admin"
+    key = IO.read(Rails.root + "config/key.txt").to_str
+    if params[:role] == key
       @users = User.all
       # p @users
       render json: @users

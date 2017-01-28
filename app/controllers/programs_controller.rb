@@ -3,7 +3,8 @@ class ProgramsController < ApplicationController
 
   # GET /programs
   def index
-    if params[:role] == "admin"
+    key = IO.read(Rails.root + "config/key.txt").to_str
+    if params[:role] == key
       @programs = Program.all
 
       render json: @programs
