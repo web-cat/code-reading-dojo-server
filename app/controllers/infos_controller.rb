@@ -1,17 +1,19 @@
 class InfosController < ApplicationController
   before_action :set_info, only: [:show, :update, :destroy]
 
-  # # GET /infos
-  # def index
-  #   @infos = Info.all
-  #
-  #   render json: @infos
-  # end
-  #
-  # # GET /infos/1
-  # def show
-  #   render json: @info
-  # end
+  # GET /infos
+  def index
+    # @infos = Info.all
+    #
+    # render json: @infos
+    render :template => 'static_pages/home'
+  end
+
+  # GET /infos/1
+  def show
+    # render json: @info
+    render :template => 'static_pages/home' 
+  end
 
   # POST /infos
   def create

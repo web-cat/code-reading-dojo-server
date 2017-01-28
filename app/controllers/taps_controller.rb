@@ -1,17 +1,19 @@
 class TapsController < ApplicationController
   before_action :set_tap, only: [:show, :update, :destroy]
 
-  # # GET /taps
-  # def index
-  #   @taps = Tap.all
-  #
-  #   render json: @taps
-  # end
-  #
-  # # GET /taps/1
-  # def show
-  #   render json: @tap
-  # end
+  # GET /taps
+  def index
+    # @taps = Tap.all
+    #
+    # render json: @taps
+    render :template => 'static_pages/home'
+  end
+
+  # GET /taps/1
+  def show
+    # render json: @tap
+    render :template => 'static_pages/home' 
+  end
 
   # POST /taps
   def create

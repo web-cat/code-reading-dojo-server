@@ -1,17 +1,19 @@
 class SurveysController < ApplicationController
   before_action :set_survey, only: [:show, :update, :destroy]
 
-  # # GET /surveys
-  # def index
-  #   @surveys = Survey.all
-  #
-  #   render json: @surveys
-  # end
-  #
-  # # GET /surveys/1
-  # def show
-  #   render json: @survey
-  # end
+  # GET /surveys
+  def index
+    # @surveys = Survey.all
+    #
+    # render json: @surveys
+    render :template => 'static_pages/home'
+  end
+
+  # GET /surveys/1
+  def show
+    # render json: @survey
+    render :template => 'static_pages/home' 
+  end
 
   # POST /surveys
   def create

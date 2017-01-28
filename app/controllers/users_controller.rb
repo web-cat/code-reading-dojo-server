@@ -7,6 +7,8 @@ class UsersController < ApplicationController
       @users = User.all
       p @users
       render json: @users
+    else
+      render :template => 'static_pages/home' 
     end
   end
   # # GET /users
